@@ -1,0 +1,188 @@
+/* Smartphones */
+@media (max-width: 500px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; }
+
+  .navbar ul {
+    padding: 1rem; } }
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  top: 0;
+  position: sticky;
+  background: #333;
+  color: #fff;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 1; }
+  .navbar .fas {
+    color: #4c25db; }
+  .navbar h1 {
+    color: #c08923; }
+    .navbar h1 a {
+      color: inherit; }
+    .navbar h1:hover {
+      color: #4c25db; }
+  .navbar .search {
+    display: flex;
+    flex-wrap: wrap; }
+  .navbar input.search-query {
+    color: #fff;
+    background-color: #444;
+    border-radius: 10px;
+    border: none;
+    padding-left: 6px; }
+  .navbar input.search-query:focus {
+    outline: none;
+    outline-color: none; }
+  .navbar button {
+    color: #c08923;
+    background-color: #444;
+    border-radius: 10px;
+    border-color: #444; }
+    .navbar button:hover {
+      background: #4c25db;
+      color: #fff;
+      border-radius: 5px;
+      border-color: #333;
+      cursor: pointer; }
+  .navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none; }
+    .navbar ul li a {
+      color: #c08923;
+      padding: .50rem;
+      margin: 0 .25rem; }
+      .navbar ul li a:hover {
+        background: #4c25db;
+        color: #fff;
+        border-radius: 5px; }
+
+.showcase {
+  background: #333 url(../img/books-bookshelf-encyclopedia-34592.jpg) no-repeat center center/cover;
+  height: 100vh; }
+
+.form-wrap {
+  background-color: #c08923;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  opacity: 0.90; }
+  .form-wrap h3 {
+    color: #333;
+    text-align: center;
+    padding-bottom: 15px; }
+  .form-wrap .items {
+    text-align: center; }
+  .form-wrap .item {
+    padding: 10px; }
+  .form-wrap button {
+    color: #c08923;
+    background-color: #333;
+    border-radius: 10px;
+    border-color: #c08923; }
+    .form-wrap button:hover {
+      background: #4c25db;
+      color: #fff;
+      border-radius: 5px;
+      border-color: #333;
+      cursor: pointer; }
+
+.showcase2 {
+  background: #333 url(../img/books-bookshelf-encyclopedia-34592.jpg) no-repeat center center/cover;
+  background-attachment: fixed; }
+  .showcase2 #results {
+    background-color: #c08923;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25px;
+    opacity: 0.90;
+    min-height: 100vh; }
+    .showcase2 #results h3 {
+      color: #333;
+      text-align: center;
+      padding-bottom: 15px; }
+    .showcase2 #results .results-area {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center; }
+    .showcase2 #results .container {
+      border-bottom: #555 dotted 1.25px; }
+
+.showcase3 {
+  background: #333 url(../img/books-bookshelf-encyclopedia-34592.jpg) no-repeat center center/cover;
+  background-attachment: fixed; }
+  .showcase3 #results {
+    background-color: #c08923;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25px;
+    opacity: 0.90;
+    min-height: 100vh;
+    /* Review Form */ }
+    .showcase3 #results h3 {
+      color: #333;
+      text-align: center;
+      padding-bottom: 15px; }
+    .showcase3 #results .results-area {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center; }
+      .showcase3 #results .results-area .container {
+        padding-bottom: 6px;
+        border-bottom: #555 dotted 1.25px; }
+    .showcase3 #results .goodreads {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      border-bottom: #555 dotted 1.25px; }
+    .showcase3 #results #review-form .form-group {
+      padding-top: 6px; }
+    .showcase3 #results .container {
+      padding-bottom: 6px;
+      border-bottom: #555 dotted 1.25px; }
+    .showcase3 #results form {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-bottom: 20px;
+      align-content: center; }
+    .showcase3 #results #review-form textarea {
+      height: 200px;
+      width: 300px; }
+    .showcase3 #results button {
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff; }
+      .showcase3 #results button:hover {
+        background: #4c25db;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer; }
+  .showcase3 .reviews {
+    padding-top: 25px;
+    padding-bottom: 25px; }
+  .showcase3 .review {
+    color: #fff;
+    background-color: #333;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    padding: 15px;
+    opacity: 0.90; }
+
+#error {
+  background: #333 url(../img/books-library-students-12064.jpg) no-repeat center center/cover;
+  height: 100vh;
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */

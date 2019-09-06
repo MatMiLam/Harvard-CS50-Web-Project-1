@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="showcase2">
+        <div id="results">
+            <h3>Search Results</h3>
+            {% for row in search_results %}
+            <div class="results-area">
+                <div class="container">
+                    <div class="row">                        
+                        <div id="isbn" class="col-lg-3 col-sm-6">
+                            <a href="{{ url_for('book', book_id=row.id) }}">
+                                {{ row.isbn }}
+                            </a>
+                        </div>
+                        <div id="title" class="col-lg-3 col-sm-6">
+                            {{ row.title }}
+                        </div>
+                        <div id="author" class="col-lg-3 col-sm-6">
+                            {{ row.author }}
+                        </div>
+                        <div id="year" class="col-lg-3 col-sm-6">
+                            {{ row.year }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>        
+    </div>        
+    
+
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/2ba32f1590.js"></script>
+        <title>Books</title>
+    </head>
+    <body>
+        <div class="navbar">            
+            <h1 class="logo">
+                    <a href="/">
+                    <i class="fas fa-book"></i> BookClub
+                    </a>
+            </h1>
+            {% if session.user_id %}               
+                <div class="search">
+                    <form action="/search" method="POST" id="search" name="search">
+                    <input class="search-query" type="text" autocomplete="off" autofocus name="search" id="search" placeholder="Search">  
+                    <button type="submit">Search</button>  
+                    </form>
+                </div>
+                <ul>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            {% else %}                
+                <ul>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+            {% endif %}
+        </div>
+        {% block body %}
+        {% endblock %}
+        
+    </body>
+</html>

@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="showcase3">
+        <div id="results">
+            <h3>Book Info</h3>            
+            <div class="results-area">
+                <div class="container">
+                    <div class="row">
+                        <div id="isbn" class="col-lg-3 col-sm-6">
+                            {{ book.isbn }}                            
+                        </div>
+                        <div id="title" class="col-lg-3 col-sm-6">
+                            {{ book.title }}
+                        </div>
+                        <div id="author" class="col-lg-3 col-sm-6">
+                            {{ book.author }}
+                        </div>
+                        <div id="year" class="col-lg-3 col-sm-6">
+                            {{ book.year }}
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            
+            <div class="goodreads">            
+                <div id="num-ratings" class="col-lg-6 col-sm-6">
+                    Number of Ratings: {{ ratings }}
+                </div>
+                <div id="avg-rating" class="col-lg-6 col-sm-6">
+                    Average Rating: {{ rating }}
+                </div>
+            </div>
+
+            {% if not reviewed %}
+            <div id="review-form">
+                <div class="container">
+                    <form action="/review" method="post">
+                        <div class="form-group">                                           
+                            <select name="rating" id="rating">
+                                <option disabled selected value="">Choose Rating</option>
+                                <option value="1">1 Star</option>
+                                <option value="2">2 Star</option>
+                                <option value="3">3 Star</option>
+                                <option value="4">4 Star</option>
+                                <option value="5">5 Star</option>
+                            </select>
+                        </div>                        
+                        <div class="form-group">                            
+                            <textarea name="review" id="review" placeholder="My Review"></textarea>                
+                        </div>
+                        <input type="hidden" name="book_id" value={{ book.id }}>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>   
+                </div>
+            </div>
+            {% endif %}
+
+            {% if user_reviews %}
+            <div class="reviews">
+                <h3>User Reviews</h3>
+                {% for review in user_reviews %}
+                <div class="review">
+                    {{review.review}}
+                </div>                
+                {% endfor %}
+            </div>
+            {% endif %}            
+            
+        </div>                 
+
+    </div>         
+
+{% endblock %}

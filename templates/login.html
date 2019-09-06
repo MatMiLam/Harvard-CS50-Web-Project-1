@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="showcase">
+        <div class="form-wrap">
+            <h3>Log In</h3>
+            <div class="items" id="register">
+                <form action="/login" method="POST" id="login" name="login">
+                    <div id="username" class="item">
+                        <input type="text" autocomplete="off" autofocus name="username" id="username" placeholder="Username">
+                    </div>
+                    <div id="password" class="item">
+                        <input type="password" name="password" placeholder="Password">
+                    </div>                    
+                    <div id="login" class="item button">
+                        <button type="submit">Log In</button>
+                    </div>
+                </form>
+            </div>   
+        </div>
+    </div>        
+
+
+{% endblock %}
+

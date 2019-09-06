@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="showcase">
+        <div class="form-wrap">
+            <h3>Register</h3>
+            <div class="items" id="register">
+                <form action="/register" method="POST" id="register" name="register">
+                    <div id="username" class="item">
+                        <input type="text" autocomplete="off" autofocus name="username" id="username" placeholder="Username">
+                    </div>
+                    <div id="password" class="item">
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <div id="confirmation" class="item">
+                        <input type="password" name="confirmation" placeholder="Confirm Password">
+                    </div>
+                    <div id="register" class="item button">
+                        <button type="submit">Register</button>
+                    </div>
+                </form>
+            </div>   
+        </div>
+    </div>        
+
+
+{% endblock %}
