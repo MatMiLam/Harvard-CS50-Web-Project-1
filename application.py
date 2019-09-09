@@ -137,6 +137,7 @@ def search():
 
     return render_template("search_results.html", search_results=search_results)
     
+    
 @app.route("/books/<int:book_id>")
 @login_required
 def book(book_id):
@@ -154,6 +155,7 @@ def book(book_id):
 
     user_reviews = db.execute("SELECT * FROM reviews WHERE book_id = :book_id", {"book_id": book_id}).fetchall()
 
+    # Check if user has already reviewed 
     reviewed = False
     for review in user_reviews:
         if review.user_id == session["user_id"]:
@@ -168,17 +170,19 @@ def book(book_id):
 @app.route("/review", methods=["POST"])
 @login_required
 def review():
-
+    
     if request.method == "POST":
         user_rating = request.form.get("rating")
         user_review = request.form.get("review")
         book_id = request.form.get("book_id")               
 
+        # Verify valid user review input
         if not user_rating or not user_review:
                 return  error("You must submit a rating and a review")
 
         review_check = db.execute("SELECT * FROM reviews WHERE user_id = :user_id AND book_id = :book_id", {"user_id": session["user_id"], "book_id": book_id}).fetchone()
 
+        # Enter review into database 
         if not review_check:
             new_review = db.execute(
             "INSERT INTO reviews(user_id, book_id, rating, review) VALUES(:user_id, :book_id, :rating, :review)", {"user_id": session["user_id"], "book_id": book_id, "rating": user_rating, "review": user_review})
@@ -194,6 +198,7 @@ def api(isbn):
 
     isbn_check = db.execute("SELECT * FROM books WHERE isbn = :isbn", {"isbn": isbn}).fetchone()    
 
+    # Valid ISBN check 
     if not isbn_check:
         print("Returning 404")
         return abort(404)   
@@ -202,6 +207,7 @@ def api(isbn):
     ratings = api_data["books"][0]["work_ratings_count"]
     rating = api_data["books"][0]["average_rating"]       
 
+    # Build API dict  
     api_return = {
         "title": isbn_check.title,
         "author": isbn_check.author,
